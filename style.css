@@ -1,0 +1,267 @@
+/* =========================================
+   1. CONFIGURACIÓN BASE
+   ========================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    
+    /* Importante: Ocultamos la barra para estética, pero el scroll existe */
+    overflow-x: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar { display: none; }
+
+/* =========================================
+   2. SECCIONES (LAYOUT FLEXIBLE)
+   ========================================= */
+.hero, 
+section {
+    /* CLAVE: min-height asegura que si el contenido es mucho, la sección crece */
+    min-height: 100vh; 
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+/* Centrado vertical para secciones cortas */
+.hero, #problemas, .cta-section {
+    justify-content: center;
+}
+
+/* Alineación superior para secciones largas (evita cortes) */
+#soluciones, .footer {
+    justify-content: flex-start;
+    padding-top: 100px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* =========================================
+   3. ESTILOS VISUALES (VARIABLES)
+   ========================================= */
+:root {
+    --bg-body: #F9FAFB;
+    --bg-card: #FFFFFF;
+    --text-main: #111827;
+    --text-muted: #4B5563;
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --accent: #F59E0B;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --border-color: #E5E7EB;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --error-bg: #FEF2F2;
+    --error-border: #FECACA;
+    --error-text: #DC2626;
+}
+
+body.dark-mode {
+    --bg-body: #0F172A;
+    --bg-card: #1E293B;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --primary: #3B82F6;
+    --primary-hover: #60A5FA;
+    --nav-bg: rgba(15, 23, 42, 0.95);
+    --border-color: #334155;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --error-bg: #450a0a;
+    --error-border: #7f1d1d;
+    --error-text: #fca5a5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* Componentes */
+.btn { padding: 12px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; display: inline-block; border: none; font-size: 0.95rem; }
+.btn-primary { background-color: var(--primary); color: white; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
+.btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+.ml-large { margin-left: 20px; }
+
+.navbar { position: fixed; width: 100%; top: 0; z-index: 1000; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+.logo .dot { color: var(--primary); }
+.nav-links { display: flex; gap: 30px; } 
+.nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; }
+.nav-buttons { display: flex; align-items: center; }
+.theme-btn { background: none; border: none; color: var(--text-main); font-size: 1.2rem; cursor: pointer; padding: 5px; }
+.menu-toggle { display: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
+
+/* Hero */
+.hero-content { display: flex; align-items: center; gap: 50px; }
+.hero-text { flex: 1; }
+.badge { background: rgba(37, 99, 235, 0.1); color: var(--primary); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 25px; }
+.hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
+.hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; max-width: 90%; }
+.gradient-text { background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.small-trust { font-size: 0.85rem; color: var(--text-muted); margin-top: 15px; display: flex; align-items: center; gap: 8px; }
+.hero-image { flex: 1; position: relative; perspective: 1000px; }
+.glass-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); transform: rotateY(-5deg) rotateX(5deg); transition: transform 0.5s ease; }
+.glass-card:hover { transform: rotateY(0) rotateX(0); }
+.card-header { display: flex; gap: 8px; margin-bottom: 20px; }
+.circle { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #EF4444; } .yellow { background: #F59E0B; } .green { background: #10B981; }
+.fake-interface { display: flex; gap: 15px; height: 260px; }
+.sidebar { width: 60px; background: var(--bg-body); border-radius: 8px; }
+.main-area { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.skeleton-header { height: 30px; background: var(--bg-body); border-radius: 6px; }
+.grid-2 { display: flex; gap: 10px; }
+.skeleton-card { flex: 1; background: var(--bg-body); border-radius: 6px; }
+.skeleton-list .line { height: 12px; background: var(--bg-body); border-radius: 4px; width: 100%; margin-bottom: 10px; }
+.floating-badge { position: absolute; bottom: -30px; right: -20px; background: var(--bg-card); border: 1px solid var(--border-color); padding: 15px 25px; border-radius: 12px; display: flex; align-items: center; gap: 15px; box-shadow: var(--shadow); z-index: 10; }
+.icon-circle { width: 40px; height: 40px; background: #D1FAE5; color: #10B981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+
+/* Problemas */
+.bg-problem { background-color: var(--error-bg); border-top: 1px solid var(--error-border); border-bottom: 1px solid var(--error-border); }
+.section-header { margin-bottom: 60px; }
+.error-text { color: var(--error-text) !important; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+.section-header h3 { font-size: 2.2rem; margin-top: 10px; line-height: 1.2; }
+.pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+.pain-item { background: var(--bg-card); padding: 35px 25px; border-radius: 12px; text-align: center; border: 1px solid var(--error-border); box-shadow: 0 4px 6px rgba(220, 38, 38, 0.05); transition: transform 0.3s; }
+.pain-item:hover { transform: translateY(-5px); border-color: var(--error-text); }
+.pain-icon { font-size: 2.5rem; color: var(--error-text); margin-bottom: 20px; opacity: 0.9; }
+.pain-item h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--text-main); font-weight: 600; }
+
+/* Soluciones */
+.subtitle { color: var(--primary); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.feature-row { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; }
+.feature-row.reverse { flex-direction: row-reverse; }
+.feature-text { flex: 1; }
+.feature-text h3 { font-size: 2rem; margin: 15px 0; line-height: 1.2; }
+.feature-text p { font-size: 1.05rem; color: var(--text-muted); }
+.check-list { margin-top: 25px; }
+.check-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; color: var(--text-muted); font-size: 0.95rem; }
+.check-list i { color: #10B981; font-size: 1.1rem; }
+.visual-placeholder { background: var(--bg-card); border: 1px solid var(--border-color); height: 350px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); box-shadow: var(--shadow); font-weight: 600; text-align: center; padding: 20px; flex: 1; }
+.icon-box { width: 60px; height: 60px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; }
+.blue { background: rgba(37, 99, 235, 0.1); color: var(--primary); }
+.purple { background: rgba(139, 92, 246, 0.1); color: #8B5CF6; }
+.red { background: rgba(239, 68, 68, 0.1); color: #EF4444; }
+.green { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+
+.cta-card { background: white; max-width: 450px; margin: 40px auto 0; padding: 40px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); }
+.cta-form input { display: block; width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #E5E7EB; border-radius: 8px; font-family: inherit; font-size: 0.95rem; }
+.cta-section { background: linear-gradient(135deg, var(--primary), #4F46E5); padding: 100px 0; text-align: center; color: white; }
+.footer { padding: 50px 0; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+.footer-divider { border: 0; border-top: 1px solid var(--border-color); margin: 30px 0; opacity: 0.5; }
+.support-text { margin-bottom: 15px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+.support-logo { font-size: 1.3rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; justify-content: center; gap: 10px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--bg-card); flex-direction: column; padding: 30px; border-bottom: 1px solid var(--border-color); text-align: center; gap: 20px; box-shadow: var(--shadow); }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    .nav-buttons { display: none; }
+    .hero { text-align: center; padding-top: 120px; }
+    .hero-content { flex-direction: column; }
+    .hero-btns { justify-content: center; }
+    .small-trust { justify-content: center; }
+    .hero-image { display: none; } 
+    .feature-row, .feature-row.reverse { flex-direction: column; text-align: center; margin-bottom: 80px; }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+/* Aseguramos que el bloque de contacto ocupe toda la pantalla al aterrizar */
+.cta-section {
+    min-height: 100vh; /* Forzamos altura completa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrado vertical perfecto */
+    scroll-margin-top: 80px; /* Margen de seguridad para el imán */
+}
+
+/* El footer que quede libre abajo */
+.footer {
+    height: auto;
+    padding: 20px 0;
+}
+/* ... (Todo tu CSS anterior) ... */
+
+/* ESTILOS DEL BOTÓN VOLVER ARRIBA */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 2000; /* Por encima de todo */
+    
+    /* Animación de entrada/salida */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--primary-hover);
+    transform: translateY(-5px);
+}
+
+/* ESTILO PARA EL ÍCONO COMPUESTO (PC + Notificación) */
+.icon-stack {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.icon-notification {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    color: var(--accent); /* Color naranja/amarillo */
+    background: var(--bg-card);
+    border-radius: 50%;
+    border: 2px solid var(--bg-card); /* Borde para separar */
+}
+/* Estilo del contenedor de los logos */
+.support-logo {
+    display: flex;
+    justify-content: center; /* Las centra horizontalmente */
+    align-items: center;     /* Las centra verticalmente (clave si tienen distinta altura) */
+    gap: 50px;               /* <--- AUMENTAMOS EL ESPACIO (Antes era 10px) */
+    flex-wrap: wrap;         /* Si la pantalla es muy chica, pone una abajo de la otra */
+    margin-top: 20px;
+}
+
+/* Estilo para las imágenes dentro del footer */
+.support-logo img {
+    max-width: 100%;         /* Para que no rompan el diseño en celular */
+    height: auto;            /* Mantiene la proporción */
+    max-height: 80px;        /* Opcional: Limita la altura para que no sean gigantes */
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Un efectito suave */
+}
+
+/* Efecto opcional: se agrandan un poquito al pasar el mouse */
+.support-logo img:hover {
+    transform: scale(1.05);
+}

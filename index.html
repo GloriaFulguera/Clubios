@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubios | Gestión Deportiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Clubios<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#problemas">Problemas</a></li>
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-btn" title="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://clubnet-frontend.onrender.com/" target="_blank" class="btn btn-primary ml-large">Ver Demo</a>
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">Gestión Integral + MercadoPago</span>
+                <h1>Llevá tu institución al siguiente <span class="gradient-text">nivel</span>.</h1>
+                <p>Clubios centraliza la administración, automatiza los cobros y potencia el rendimiento deportivo. Dejá atrás los procesos manuales y dedicate a crecer.</p>
+                <div class="hero-btns">
+                    <a href="#contacto" class="btn btn-primary btn-lg">Empezar Ahora</a>
+                    <p class="small-trust"><i class="fas fa-lock"></i> Datos seguros en la nube</p>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <div class="circle red"></div>
+                        <div class="circle yellow"></div>
+                        <div class="circle green"></div>
+                    </div>
+                    <div class="fake-interface">
+                        <div class="sidebar"></div>
+                        <div class="main-area">
+                            <div class="skeleton-header" style="width: 40%;"></div>
+                            <div class="grid-2">
+                                <div class="skeleton-card" style="height: 100px;"></div>
+                                <div class="skeleton-card" style="height: 100px;"></div>
+                            </div>
+                            <div class="skeleton-list">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-badge">
+                        <div class="icon-circle"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <div>
+                            <strong>Recibo Generado</strong>
+                            <span>Envío automático al socio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="problemas" class="section bg-problem">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="subtitle error-text">Diagnóstico Actual</h2>
+                <h3>Señales de que tu gestión está frenada</h3>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="pain-icon"><i class="fas fa-times-circle"></i></div>
+                    <h4>Información Dispersa</h4>
+                    <p>Datos de socios en cuadernos, excels viejos o chats de WhatsApp. Nadie tiene la foto completa.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h4>Cobranza Manual</h4>
+                    <p>Perseguir socios por teléfono para que manden el comprobante. Perder días conciliando pagos.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon"><i class="fas fa-road-circle-xmark"></i></div>
+                    <h4>Sin Rumbo Deportivo</h4>
+                    <p>No saber si un deportista evoluciona o se estanca porque no hay registro histórico de su rendimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="soluciones" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="subtitle">Ecosistema Clubios</h2>
+                <h3>5 Pilares para transformar tu Club</h3>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <div class="icon-box blue"><i class="fas fa-receipt"></i></div>
+                    <h3>Cobros y Facturación Automática</h3>
+                    <p>Olvidate de revisar transferencias. Con la integración de MercadoPago, el pago se registra solo y <strong>el recibo se genera y envía automáticamente</strong> al socio.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Dinero directo a tu cuenta.</li>
+                        <li><i class="fas fa-check"></i> El socio descarga su recibo al instante.</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="visual-placeholder">
+                        <div class="icon-stack">
+                            <i class="fas fa-desktop" style="font-size: 3rem;"></i>
+                            <i class="fas fa-bell icon-notification" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <p>Notificación de Pago + PDF</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-text">
+                    <div class="icon-box red"><i class="fas fa-trophy"></i></div>
+                    <h3>Seguimiento y Evolución Deportiva</h3>
+                    <p>Llevá la competitividad al máximo. Registrá marcas, asistencias y evaluaciones para ver la curva de crecimiento de cada atleta.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Historial de entrenamiento.</li>
+                        <li><i class="fas fa-check"></i> Detección de talentos con datos reales.</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-chart-line" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <p>Gráficos de Rendimiento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <div class="icon-box purple"><i class="fas fa-user-shield"></i></div>
+                    <h3>Roles y Permisos Personalizados</h3>
+                    <p>Organización total. Definí quién puede ver qué. Administradores con control total, profesores que solo ven sus clases y socios con acceso a su autogestión.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Perfiles para Staff, Profesores y Socios.</li>
+                        <li><i class="fas fa-check"></i> Seguridad y privacidad de datos garantizada.</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-users-cog" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <p>Gestión de Perfiles</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-row reverse">
+                <div class="feature-text">
+                    <div class="icon-box blue"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Comunicación Oficial y Directa</h3>
+                    <p>Se terminaron los "no me enteré". Enviá notificaciones institucionales (suspensiones por lluvia, torneos, asambleas) directo al celular del socio.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Avisos masivos en un clic.</li>
+                        <li><i class="fas fa-check"></i> Panel de novedades visible para todos.</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-envelope-open-text" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <p>Panel de Novedades</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <div class="icon-box green"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Reportes para la Toma de Decisiones</h3>
+                    <p>Dejá de adivinar. Accedé a tableros claros sobre el estado económico y operativo de tu institución.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Reporte de Ingresos vs. Deuda.</li>
+                        <li><i class="fas fa-check"></i> Ocupación de actividades y profesores.</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-table" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <p>Tablero de Control</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="cta-section">
+        <div class="container cta-content">
+            <h2>Es momento de profesionalizar tu Club</h2>
+            <p>Sumate a la plataforma que eligen las instituciones modernas.</p>
+            <div class="cta-card">
+                <form class="cta-form">
+                    <input type="text" placeholder="Nombre de la Institución" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <button type="submit" class="btn btn-primary w-full">Empezar Ahora</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-top text-center">
+            <p class="support-text">Con el apoyo institucional de:</p>
+            
+            <div class="support-logo">
+                <img src="./assets/JAC.png" alt="Logo JAC">
+                <img src="./assets/fecea.png" alt="Logo FECEA"> 
+            </div>
+
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom text-center">
+            <p>&copy; 2025 Clubios. Potenciando el deporte.</p>
+        </div>
+    </div>
+</footer>
+
+    <button id="back-to-top" class="back-to-top" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<script>
+    // === CONFIGURACIÓN ===
+    const SCROLL_DURATION = 1000; 
+    const OFFSET_TOP = 80;        
+    
+    const sections = document.querySelectorAll('.hero, section'); 
+    let isAnimating = false;
+    
+    // === FUNCIÓN SCROLL SUAVE ===
+    function smoothScrollTo(target, duration) {
+        const start = window.pageYOffset;
+        const distance = (target - OFFSET_TOP) - start;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = easeInOutCubic(timeElapsed, start, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+            else isAnimating = false; 
+        }
+        
+        function easeInOutCubic(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t * t + b;
+            t -= 2;
+            return c / 2 * (t * t * t + 2) + b;
+        }
+        requestAnimationFrame(animation);
+    }
+
+    // === SCROLL HÍBRIDO ===
+    window.addEventListener('wheel', (e) => {
+        if (isAnimating) { e.preventDefault(); return; }
+
+        let currentSectionIndex = -1;
+        sections.forEach((sec, index) => {
+            const rect = sec.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                currentSectionIndex = index;
+            }
+        });
+
+        if (currentSectionIndex === -1) return;
+        const currentSection = sections[currentSectionIndex];
+        const rect = currentSection.getBoundingClientRect();
+        
+        if (e.deltaY > 0) { 
+            const isAtBottom = rect.bottom <= window.innerHeight + 10;
+            const fitsScreen = rect.height <= window.innerHeight + 50; 
+            if (fitsScreen || isAtBottom) {
+                if (currentSectionIndex + 1 < sections.length) {
+                    e.preventDefault();
+                    isAnimating = true;
+                    smoothScrollTo(sections[currentSectionIndex + 1].offsetTop, SCROLL_DURATION);
+                }
+            }
+        } else { 
+            const isAtTop = rect.top >= -10; 
+            const fitsScreen = rect.height <= window.innerHeight + 50;
+            if (fitsScreen || isAtTop) {
+                if (currentSectionIndex - 1 >= 0) {
+                    e.preventDefault();
+                    isAnimating = true;
+                    smoothScrollTo(sections[currentSectionIndex - 1].offsetTop, SCROLL_DURATION);
+                }
+            }
+        }
+    }, { passive: false });
+
+    // === LÓGICA BOTÓN VOLVER ARRIBA ===
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    // Mostrar/Ocultar botón al scrollear
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Acción de clic
+    backToTopBtn.addEventListener('click', () => {
+        isAnimating = true;
+        // Usamos 0 como target para ir al inicio absoluto, y ajustamos el offset negativo para que sea 0 real
+        const start = window.pageYOffset;
+        // Reusamos la lógica de animación pero manual para ir a 0
+        let startTime = null;
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            // Usamos la misma ease function
+            function easeInOutCubic(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t * t + b;
+                t -= 2;
+                return c / 2 * (t * t * t + 2) + b;
+            }
+            const run = easeInOutCubic(timeElapsed, start, -start, SCROLL_DURATION);
+            window.scrollTo(0, run);
+            if (timeElapsed < SCROLL_DURATION) requestAnimationFrame(animation);
+            else isAnimating = false;
+        }
+        requestAnimationFrame(animation);
+    });
+
+    // === TEMA OSCURO ===
+    const toggleBtn = document.getElementById('theme-toggle');
+    const icon = toggleBtn.querySelector('i');
+    const body = document.body;
+    if (localStorage.getItem('theme') === 'dark') { body.classList.add('dark-mode'); icon.classList.replace('fa-moon', 'fa-sun'); }
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) { icon.classList.replace('fa-moon', 'fa-sun'); localStorage.setItem('theme', 'dark'); }
+        else { icon.classList.replace('fa-sun', 'fa-moon'); localStorage.setItem('theme', 'light'); }
+    });
+    
+    // === MENÚ MÓVIL ===
+    document.querySelector('.menu-toggle').addEventListener('click', () => { document.querySelector('.nav-links').classList.toggle('active'); });
+</script>
+</body>
+</html>
