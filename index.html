@@ -13,17 +13,30 @@
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">Clubios<span class="dot">.</span></div>
+            
             <ul class="nav-links">
                 <li><a href="#problemas">Problemas</a></li>
                 <li><a href="#soluciones">Soluciones</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+
+                <li class="mobile-only divider"></li>
+                <li class="mobile-only">
+                    <button id="theme-toggle-mobile" class="theme-btn-mobile">
+                        <i class="fas fa-moon"></i> Modo Oscuro
+                    </button>
+                </li>
+                <li class="mobile-only">
+                    <a href="https://clubnet-frontend.onrender.com/" target="_blank" class="btn btn-primary w-full">Ver Demo</a>
+                </li>
             </ul>
-            <div class="nav-buttons">
+
+            <div class="nav-buttons desktop-only">
                 <button id="theme-toggle" class="theme-btn" title="Cambiar tema">
                     <i class="fas fa-moon"></i>
                 </button>
                 <a href="https://clubnet-frontend.onrender.com/" target="_blank" class="btn btn-primary ml-large">Ver Demo</a>
             </div>
+
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
@@ -346,16 +359,40 @@
         requestAnimationFrame(animation);
     });
 
-    // === TEMA OSCURO ===
-    const toggleBtn = document.getElementById('theme-toggle');
-    const icon = toggleBtn.querySelector('i');
+    // === TEMA OSCURO (Maneja botón de escritorio y de móvil) ===
     const body = document.body;
-    if (localStorage.getItem('theme') === 'dark') { body.classList.add('dark-mode'); icon.classList.replace('fa-moon', 'fa-sun'); }
-    toggleBtn.addEventListener('click', () => {
+    
+    // Función para actualizar íconos
+    function updateIcons(isDark) {
+        const iconDesktop = document.querySelector('#theme-toggle i');
+        const iconMobile = document.querySelector('#theme-toggle-mobile i');
+        
+        if (isDark) {
+            if(iconDesktop) iconDesktop.className = 'fas fa-sun';
+            if(iconMobile) iconMobile.className = 'fas fa-sun';
+        } else {
+            if(iconDesktop) iconDesktop.className = 'fas fa-moon';
+            if(iconMobile) iconMobile.className = 'fas fa-moon';
+        }
+    }
+
+    // Cargar tema guardado
+    if (localStorage.getItem('theme') === 'dark') { 
+        body.classList.add('dark-mode'); 
+        updateIcons(true);
+    }
+
+    // Función para cambiar tema
+    function toggleTheme() {
         body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) { icon.classList.replace('fa-moon', 'fa-sun'); localStorage.setItem('theme', 'dark'); }
-        else { icon.classList.replace('fa-sun', 'fa-moon'); localStorage.setItem('theme', 'light'); }
-    });
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateIcons(isDark);
+    }
+
+    // Asignar eventos a AMBOS botones
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
     
     // === MENÚ MÓVIL ===
     document.querySelector('.menu-toggle').addEventListener('click', () => { document.querySelector('.nav-links').classList.toggle('active'); });

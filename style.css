@@ -265,3 +265,74 @@ ul { list-style: none; }
 .support-logo img:hover {
     transform: scale(1.05);
 }
+/* --- CLASES DE UTILIDAD PARA CONTROLAR QUE SE VE --- */
+/* Por defecto (PC), ocultamos las cosas de móvil */
+.mobile-only { display: none; }
+.desktop-only { display: flex; }
+
+/* Estilo del botón de modo oscuro en el menú móvil */
+.theme-btn-mobile {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* --- RESPONSIVE (CELULAR) --- */
+@media (max-width: 768px) {
+    /* 1. MENÚ: Mostramos cosas de móvil y ocultamos las de escritorio */
+    .mobile-only { display: block; width: 100%; }
+    .desktop-only { display: none; }
+    
+    .nav-links li { width: 100%; } /* Botones ocupan todo el ancho */
+
+    /* 2. SOLUCIONES / BENEFICIOS (Arreglo visual) */
+    .feature-row, .feature-row.reverse {
+        flex-direction: column; /* Uno abajo del otro */
+        text-align: center;     /* Texto centrado */
+        gap: 30px;              /* Menos espacio entre elementos */
+        margin-bottom: 60px;    /* Separación entre bloques */
+    }
+
+    /* Ocultamos el rectángulo gigante que molesta */
+    .visual-placeholder {
+        display: none; 
+    }
+
+    /* Centramos el ícono y el texto */
+    .feature-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Esto centra el ícono horizontalmente */
+    }
+
+    .icon-box {
+        margin-bottom: 15px; /* Un poco de aire abajo del ícono */
+    }
+
+    /* Centramos la lista de checkmarks */
+    .check-list {
+        text-align: left; /* El texto del check queda mejor a la izquierda... */
+        display: inline-block; /* ...pero el bloque se centra */
+        margin-top: 20px;
+    }
+}
+/* Corrección para que el botón Demo se vea blanco en el celular */
+.nav-links .btn-primary {
+    color: white !important;
+}
