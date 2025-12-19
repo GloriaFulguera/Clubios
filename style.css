@@ -10,11 +10,11 @@ html, body {
     color: var(--text-main);
     
     /* Importante: Ocultamos la barra para estética, pero el scroll existe */
-    overflow-x: hidden;
+    /* overflow-x: hidden;
     scrollbar-width: none; 
-    -ms-overflow-style: none;
+    -ms-overflow-style: none; */
 }
-body::-webkit-scrollbar { display: none; }
+/* body::-webkit-scrollbar { display: none; } */
 
 /* =========================================
    2. SECCIONES (LAYOUT FLEXIBLE)
